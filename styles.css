@@ -1,13 +1,28 @@
-#gridContainer{
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contaier{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    
+
+}
+
+#gridContainer{
+    display: flex;
     flex-wrap: wrap;
-    width: 640px;
+    width: 960px;
+    border: 5px solid black;
 }
 
 .square{
-    background-color: red;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    transition: background-color 0.3s ease;
+    
 }
