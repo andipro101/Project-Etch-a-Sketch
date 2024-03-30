@@ -1,7 +1,6 @@
 const GRID_CONTAINER = document.querySelector("#gridContainer");
 const GRID_SIZE = document.querySelector("#gridSize")
 const DIV_SQUARE = document.createElement("div");
-DIV_SQUARE.classList.add("square");
 
 window.addEventListener('load', () => {
     grid(16);
@@ -12,11 +11,17 @@ function changeColorPermanent(event) {
     event.target.removeEventListener('mouseenter', changeColorPermanent);
 }
 
+
 function grid(number){    
-    
+    DIV_SQUARE.classList.add("square");
+
+    let size = 880 / number + "px"
+
     for (let line = 0; line < number; line++) {
         for (let row = 0; row < number; row++){
             let divSquareClone = DIV_SQUARE.cloneNode(true);
+            divSquareClone.style.width = size;
+            divSquareClone.style.height = size;
             divSquareClone.addEventListener('mouseenter', changeColorPermanent);
             GRID_CONTAINER.appendChild(divSquareClone);
         }
