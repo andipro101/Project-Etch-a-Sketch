@@ -2,12 +2,24 @@ html, body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: #ddd8d8;
 }
+
+
+.headerContainer{ 
+    display: flex;
+    justify-content: center;
+}
+
+.headerContainer h1{
+    font-size: 50px;
+}
+
+
 
 .contaier{
     display: flex;
     justify-content: center;
-    align-items:baseline;
     height: 100%;
     
 
@@ -17,7 +29,11 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     width: 880px;
+    height: 880px;
     border: 5px solid black;
+    margin-left: 150px;
+    background-color: white;
+
 }
 
 .square{
@@ -36,7 +52,6 @@ html, body {
     display: flex;
     height: 100px;
     width: 887px;
-    justify-content:baseline;
     align-items: end;
     
 }
@@ -60,4 +75,73 @@ html, body {
 div .sliderContainer p{
     margin: 0;
     font-size: 22px;
+}
+
+
+.colorsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 145px;
+    align-self: flex-start;
+
+}
+
+.colorsContainer .colorButton{
+    display: flex;
+    width: 70px;
+    height: 70px;
+    margin-left: 1px;
+    border: 2px solid black;
+}
+
+.colorsContainer .colorButton:hover{
+    border: 5px solid black;
+    
+}
+
+
+#red {
+    background-color: red;
+    
+}
+
+#blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#purple {
+    background-color: purple;
+}
+
+
+#pink{
+    background-color: pink;
+}
+
+
+#white{
+    background-color: white;
+}
+
+
+#black {
+    background-color: black;
+}
+
+
+
+#random {
+    background: linear-gradient(to bottom right, violet, indigo, blue, green, yellow, orange, red);
 }
