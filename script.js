@@ -8,6 +8,11 @@ const CONTAINERS = document.querySelectorAll(".colorsContainer");
 let isBorderOn = false;
 let currentColor = 'black';
 
+
+document.addEventListener('dragstart', function(event) {
+    event.preventDefault();
+});
+
 window.addEventListener('load', () => {
     RANGE_OUTPUT.innerHTML = RANGE_SLIDER.value + "x" + RANGE_SLIDER.value;
     grid(RANGE_SLIDER.value);
@@ -36,8 +41,9 @@ function updateBorder() {
 }
 
 function changeColorPermanent(event) {
-    event.target.style.backgroundColor = currentColor;
-
+    if (event.buttons === 1) {
+        event.target.style.backgroundColor = currentColor;
+    }
 }
 
 function grid(number){    
@@ -50,12 +56,25 @@ function grid(number){
             let divSquareClone = DIV_SQUARE.cloneNode(true);
             divSquareClone.style.width = size;
             divSquareClone.style.height = size;
-            divSquareClone.addEventListener('mouseenter', changeColorPermanent);
+            divSquareClone.addEventListener('mousemove', changeColorPermanent);
             GRID_CONTAINER.appendChild(divSquareClone);
         }
     }
     updateBorder();
 }
+
+document.addEventListener('mousedown', (event) => {
+    if (event.button === 0) {
+        isMouseDown = true;
+    }
+});
+
+
+document.addEventListener('mouseup', () => {
+    isMouseDown = false;
+});
+
+
 
 RESET_BUTTON.addEventListener("click",()=>{
     GRID_CONTAINER.innerHTML = "";
